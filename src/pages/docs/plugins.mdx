@@ -20,10 +20,10 @@ uniconv plugin list
 uniconv plugin search image
 
 # Install a plugin
-uniconv plugin install ascii
+uniconv plugin install data-convert
 
 # Install a specific version
-uniconv plugin install ascii@1.0.0
+uniconv plugin install data-convert@1.0.0
 
 # Install an entire collection
 uniconv plugin install +essentials
@@ -32,10 +32,10 @@ uniconv plugin install +essentials
 uniconv plugin update --all
 
 # Remove a plugin
-uniconv plugin remove ascii
+uniconv plugin remove data-convert
 
 # Show plugin details
-uniconv plugin info ascii
+uniconv plugin info data-convert
 ```
 
 ## Available plugins
@@ -44,9 +44,9 @@ uniconv plugin info ascii
 |--------|------|---------|-------------|
 | `image-convert` | Native (C++) | jpg, png, webp, gif, heic, ... | Image format conversion via libvips |
 | `video-convert` | Native (C++) | mp4, mov, avi, webm, gif, ... | Video format conversion via FFmpeg |
+| `audio-convert` | Native (C++) | mp3, aac, wav, flac, ogg, ... | Audio format conversion via FFmpeg |
 | `doc-convert` | CLI (Python) | pdf, docx, odt, xlsx, md, ... | Document conversion via LibreOffice |
-| `ascii` | CLI (Python) | ascii, ascii-art, text-art | Convert images to ASCII art |
-| `image-filter` | CLI (Python) | grayscale, invert, negative | Apply image filters |
+| `data-convert` | CLI (Python) | json, csv, yaml, xml, toml, ... | Structured data format conversion |
 
 ## Plugin specifier syntax
 

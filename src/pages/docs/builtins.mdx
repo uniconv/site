@@ -25,8 +25,8 @@ Copy output directly to the system clipboard:
 # Convert and copy to clipboard (no file saved)
 uniconv photo.heic "png | clipboard"
 
-# Copy ASCII art to clipboard
-uniconv photo.jpg "ascii | clipboard"
+# Convert and copy to clipboard
+uniconv video.mp4 "mp3 | clipboard"
 
 # Save file AND copy to clipboard
 uniconv photo.heic "png | clipboard --save"
@@ -46,8 +46,8 @@ uniconv -o result.png photo.heic "png | clipboard"
 Pass input through unchanged. Useful for matching `tee` branches:
 
 ```bash
-# Convert to PNG and copy ASCII to clipboard, pass through original to save
-uniconv photo.heic "tee | png, ascii | _, clipboard"
+# Convert to PNG and copy WAV to clipboard, pass through original to save
+uniconv video.mp4 "tee | gif, wav | _, clipboard"
 
 # Skip one branch entirely
 uniconv video.mp4 "tee | gif --width 320, _ | clipboard, _"
