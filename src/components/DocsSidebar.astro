@@ -1,0 +1,55 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: 'Getting Started', href: '/docs/getting-started' },
+  { label: 'Pipeline Syntax', href: '/docs/pipeline-syntax' },
+  { label: 'Builtin Stages', href: '/docs/builtins' },
+  { label: 'Plugins', href: '/docs/plugins' },
+  { label: 'CLI Reference', href: '/docs/cli-reference' },
+];
+---
+
+<aside class="w-full lg:w-56 shrink-0">
+  <!-- Mobile toggle -->
+  <button
+    id="docs-nav-toggle"
+    class="lg:hidden w-full flex items-center justify-between p-3 rounded-lg border border-surface-3 bg-surface-2 text-sm text-gray-300 mb-4"
+  >
+    <span>Documentation</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <nav id="docs-nav" class="hidden lg:block">
+    <ul class="space-y-1">
+      {navItems.map((item) => {
+        const isActive = currentPath === item.href || currentPath === item.href + '/';
+        return (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'block px-3 py-2 rounded-md text-sm font-medium transition-colors',
+                isActive
+                  ? 'bg-accent/10 text-accent'
+                  : 'text-gray-400 hover:text-white hover:bg-surface-3/50',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  const toggle = document.getElementById('docs-nav-toggle');
+  const nav = document.getElementById('docs-nav');
+  toggle?.addEventListener('click', () => {
+    nav?.classList.toggle('hidden');
+  });
+</script>

@@ -1,0 +1,86 @@
+---
+const features = [
+  {
+    title: 'Plugin System',
+    description: 'Install converters for any format. Native (C/C++) for performance, CLI (Python, Go, Rust) for everything else.',
+    icon: 'puzzle',
+  },
+  {
+    title: 'Pipeline Syntax',
+    description: 'Chain transformations with | just like Unix pipes. Multi-stage conversions in a single command.',
+    icon: 'pipeline',
+  },
+  {
+    title: 'Branching (tee)',
+    description: 'Split a pipeline into parallel branches. Convert to multiple formats and sizes at once.',
+    icon: 'branch',
+  },
+  {
+    title: 'Clipboard',
+    description: 'Copy output directly to the system clipboard. Perfect for quick conversions and sharing.',
+    icon: 'clipboard',
+  },
+  {
+    title: 'Presets',
+    description: 'Save and reuse complex pipelines. One command for your frequent conversion workflows.',
+    icon: 'preset',
+  },
+  {
+    title: 'Generators',
+    description: 'Create content from scratch without an input file. Random noise, QR codes, and more.',
+    icon: 'generator',
+  },
+];
+---
+
+<section class="py-20 px-6 bg-surface-1/50">
+  <div class="mx-auto max-w-6xl">
+    <h2 class="font-mono font-bold text-2xl sm:text-3xl text-white text-center mb-4">
+      Features
+    </h2>
+    <p class="text-gray-400 text-center mb-12 max-w-xl mx-auto">
+      Everything you need for file conversion, powered by a growing plugin ecosystem.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((feature) => (
+        <div class="p-6 rounded-xl border border-surface-3 bg-surface-2/50 hover:border-accent/30 transition-colors">
+          <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+            {feature.icon === 'puzzle' && (
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+              </svg>
+            )}
+            {feature.icon === 'pipeline' && (
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+              </svg>
+            )}
+            {feature.icon === 'branch' && (
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5m0 2H6m2 0h2m4 10l2 2m0 0l2-2m-2 2V9a2 2 0 00-2-2H8" />
+              </svg>
+            )}
+            {feature.icon === 'clipboard' && (
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            )}
+            {feature.icon === 'preset' && (
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+              </svg>
+            )}
+            {feature.icon === 'generator' && (
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            )}
+          </div>
+          <h3 class="font-mono font-semibold text-white mb-2">{feature.title}</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

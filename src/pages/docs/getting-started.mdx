@@ -1,0 +1,80 @@
+---
+layout: ../../layouts/DocsLayout.astro
+title: Getting Started
+---
+
+Install uniconv and run your first conversions in minutes.
+
+## Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/uniconv/uniconv/main/install.sh | bash
+```
+
+Or [build from source](https://github.com/uniconv/uniconv/blob/main/docs/building.md).
+
+## Install plugins
+
+uniconv's functionality comes from plugins. Start with the essentials collection:
+
+```bash
+uniconv plugin install +essentials
+```
+
+This installs converters for common image, video, and document formats.
+
+## Your first conversions
+
+```bash
+# Convert an image
+uniconv photo.heic "jpg --quality 85"
+
+# Convert a video to GIF
+uniconv video.mp4 "gif --width 320 --fps 15"
+
+# Convert a document
+uniconv document.docx "pdf"
+```
+
+## Chain conversions
+
+Use `|` to chain multiple transformations:
+
+```bash
+# Convert video audio to AAC
+uniconv video.mp4 "wav | aac"
+
+# Convert and apply a filter
+uniconv photo.heic "jpg | grayscale"
+```
+
+## Output to multiple formats
+
+Use `tee` to branch into parallel outputs:
+
+```bash
+uniconv photo.heic "tee | jpg --quality 80, webp --quality 75, png"
+```
+
+## Get file info
+
+```bash
+uniconv info photo.heic
+```
+
+## Keep up to date
+
+```bash
+# Update uniconv
+uniconv update
+
+# Update plugins
+uniconv plugin update
+```
+
+## Next steps
+
+- [Pipeline Syntax](/docs/pipeline-syntax) — Learn about chaining, branching, stdin, and presets
+- [Builtin Stages](/docs/builtins) — `tee`, `clipboard`, and passthrough
+- [Plugins](/docs/plugins) — Discover and manage plugins
+- [CLI Reference](/docs/cli-reference) — All commands and options
