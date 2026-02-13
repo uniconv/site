@@ -1,12 +1,13 @@
 ---
+const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
-const isDocsPage = currentPath.startsWith('/docs');
+const isDocsPage = currentPath.includes('/docs');
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 border-b border-surface-3 bg-surface-0/80 backdrop-blur-md">
   <nav class="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
-    <a href="/" class="flex items-center gap-3 group">
-      <img src="/uniconv-logo.png" alt="uniconv" class="w-8 h-8" />
+    <a href={base} class="flex items-center gap-3 group">
+      <img src={`${base}/uniconv-logo.png`} alt="uniconv" class="w-8 h-8" />
       <span class="font-mono font-bold text-lg text-white group-hover:text-accent transition-colors">
         uniconv
       </span>
@@ -14,7 +15,7 @@ const isDocsPage = currentPath.startsWith('/docs');
 
     <div class="flex items-center gap-6">
       <a
-        href="/docs/getting-started"
+        href={`${base}/docs/getting-started`}
         class:list={[
           'text-sm font-medium transition-colors',
           isDocsPage ? 'text-accent' : 'text-gray-400 hover:text-white',
